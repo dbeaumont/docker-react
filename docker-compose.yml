@@ -1,0 +1,21 @@
+version: '3'
+services: 
+    web:
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+        ports:
+            - "3000:3000"
+        volumes:
+            - .:/app
+            - /app/node_modules           # To say "do not map to anything even if root /app is already mapped"
+        command: ["npm", "run", "start"]  # Only for dev purpose
+
+    tests:
+        build: 
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes:
+            - .:/app
+            - /app/node_modules           # To say "do not map to anything even if root /app is already mapped"
+        command: ["npm", "run", "test"]
