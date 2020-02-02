@@ -9,7 +9,7 @@ services:
         volumes:
             - .:/app
             - /app/node_modules           # To say "do not map to anything even if root /app is already mapped"
-        command: ["npm", "run", "start"]  # Only for dev purpose
+        # command: ["npm", "run", "start"]  # Only for dev purpose , already in Dockerfile.dev
 
     tests:
         build: 
