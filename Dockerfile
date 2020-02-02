@@ -9,3 +9,4 @@ RUN npm run build
 FROM nginx
 # cf nginx doc in hub.docker.com for taeget directory which exposes our static files
 COPY --from=builder /app/build /usr/share/nginx/html  
+
